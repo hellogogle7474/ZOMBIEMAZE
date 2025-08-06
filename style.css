@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 2px solid #444;
+    background-color: #222;
+    display: none;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    border-bottom: 2px solid #444;
+}
+
+.score-container, .health-container, .level-container {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#gameCanvas {
+    display: block;
+    background-color: #000;
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.controls-info {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #333;
+    border-top: 2px solid #444;
+}
+
+.game-menu, .game-over, .how-to-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #555;
+    width: 400px;
+}
+
+.game-menu h1, .game-over h1, .how-to-play h1 {
+    color: #ff5555;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+button {
+    background-color: #ff5555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3333;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.game-over {
+    display: none;
+}
+
+.how-to-play {
+    display: none;
+}
+
+.how-to-play ul {
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.how-to-play li {
+    margin-bottom: 10px;
+}
+
+/* 애니메이션 효과 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.game-menu h1 {
+    animation: pulse 2s infinite;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 850px) {
+    .game-container {
+        width: 95vw;
+        height: 95vh;
+    }
+}
+
+@media (max-width: 450px) {
+    .game-menu, .game-over, .how-to-play {
+        width: 90vw;
+    }
+}

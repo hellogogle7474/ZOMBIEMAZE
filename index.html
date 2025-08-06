@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D 좀비 미로 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score-container">점수: <span id="score">0</span></div>
+            <div class="health-container">체력: <span id="health">100</span></div>
+            <div class="level-container">레벨: <span id="level">1</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="controls-info">
+            <p>조작법: 방향키(↑↓←→)를 사용하여 플레이어를 움직입니다.</p>
+            <p>목표: 좀비를 피해 출구를 찾으세요!</p>
+        </div>
+    </div>
+    <div class="game-menu" id="gameMenu">
+        <h1>2D 좀비 미로 게임</h1>
+        <button id="startGame">게임 시작</button>
+        <button id="howToPlay">게임 방법</button>
+    </div>
+    <div class="game-over" id="gameOver">
+        <h1>게임 오버</h1>
+        <p>점수: <span id="finalScore">0</span></p>
+        <button id="restartGame">다시 시작</button>
+    </div>
+    <div class="how-to-play" id="howToPlayMenu">
+        <h1>게임 방법</h1>
+        <ul>
+            <li>방향키를 사용하여 플레이어를 움직입니다.</li>
+            <li>좀비를 피해 미로의 출구를 찾으세요.</li>
+            <li>아이템을 수집하여 점수를 얻고 능력을 향상시키세요.</li>
+            <li>좀비에게 닿으면 체력이 감소합니다.</li>
+            <li>체력이 0이 되면 게임 오버입니다.</li>
+        </ul>
+        <button id="backToMenu">메뉴로 돌아가기</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
